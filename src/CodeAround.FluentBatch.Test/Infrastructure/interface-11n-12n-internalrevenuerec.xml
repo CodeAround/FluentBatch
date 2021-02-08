@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"> 
+<delivery xmlns:xsi="https://microsoft.com/v1/internalrevenuerec" xsi:schemaLocation="https://microsoft.com/v1/internalrevenuerec.xsd"> 
+	<channel_id>1</channel_id>
+	<creation_date>30/04/2019</creation_date> 
+	<creation_time>2019-04-30T16:12:00Z</creation_time>
+	<sender_id>Microsoft</sender_id> 
+	<receiver_id>OneDrive</receiver_id> 
+	<support_email>ftp_support@microsoft.com</support_email> 
+	<support_phone>0582345111</support_phone> 
+	<number_of_records>2</number_of_records> 
+	<data>
+		<overview>
+			<number_of_transactions>2</number_of_transactions>
+			<number_of_confirmed_transactions>1</number_of_confirmed_transactions>
+			<number_of_error_transactions>1</number_of_error_transactions>
+		</overview>
+		<transactions>
+			<transaction>
+				<loyalty_id>3234823762</loyalty_id>
+				<id>22863a1d-6bfd-4cb7-bee3-db58b05527bd</id>
+				<billable_points>50</billable_points>  
+				<confirmed>true</confirmed>
+			</transaction>
+			<transaction>
+				<loyalty_id>3346724866</loyalty_id>
+				<id>22863a1d-6bfd-4cb7-bee3-db58b05527bd</id>
+				<billable_points>0</billable_points>
+				<confirmed>false</confirmed>
+			</transaction>
+		</transactions>
+	</data> 
+</delivery>

@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29102.190
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodeAround.FluentBatch", "CodeAround.FluentBatch\CodeAround.FluentBatch.csproj", "{F989530D-F0D5-47F3-9352-DC00A86FC09A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeAround.FluentBatch.Test", "CodeAround.FluentBatch.Test\CodeAround.FluentBatch.Test.csproj", "{B284AF95-C5C7-45B1-A8D5-16B894729EE4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F989530D-F0D5-47F3-9352-DC00A86FC09A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F989530D-F0D5-47F3-9352-DC00A86FC09A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F989530D-F0D5-47F3-9352-DC00A86FC09A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F989530D-F0D5-47F3-9352-DC00A86FC09A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B284AF95-C5C7-45B1-A8D5-16B894729EE4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B284AF95-C5C7-45B1-A8D5-16B894729EE4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B284AF95-C5C7-45B1-A8D5-16B894729EE4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B284AF95-C5C7-45B1-A8D5-16B894729EE4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {400BC742-AB5E-4CFD-9352-7FD42612D167}
+	EndGlobalSection
+EndGlobal

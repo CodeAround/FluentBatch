@@ -1,0 +1,1 @@
+﻿SELECT * FROM dbo.[Persons] WHERE PersonId = @PersonId

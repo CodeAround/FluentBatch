@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<delivery xmlns:xsi="https://viseca.ch/manor/v1/promocredit" xsi:schemaLocation="https://viseca.ch/manor/v1/promocredit.xsd">
+  <channel_id>1</channel_id>
+  <creation_date>30/04/2019</creation_date>
+  <creation_time>2019-04-30T16:12:00Z</creation_time>
+  <sender_id>MANOR</sender_id>
+  <receiver_id>VISECA</receiver_id>
+  <support_email>ftp_support@viseca.ch</support_email>
+  <support_phone>0582345111</support_phone>
+  <number_of_records>12</number_of_records>
+  <data>
+    <overview>
+      <number_of_credits>12</number_of_credits>
+      <total_credit_amount>14000</total_credit_amount>
+    </overview>
+    <promo_credit>
+      <loyalty_id>3234298361</loyalty_id>
+      <storno>false</storno>
+      <promo_credit_number>1276-2384721</promo_credit_number>
+      <promo_credit_id>10000020</promo_credit_id>
+      <promo_credit_installments>6</promo_credit_installments>
+      <promo_item>TV Ultra 8K</promo_item>
+      <promo_credit_amount>2500.00</promo_credit_amount>
+      <transaction_amount>2500.00</transaction_amount>
+      <authorisation_timestamp>2019-06-15T13:01:00.00Z</authorisation_timestamp>
+      <authorisation_id>41b25154-ae64-4130-953c-0c8cb00cc260</authorisation_id>
+    </promo_credit>
+  </data>
+</delivery>

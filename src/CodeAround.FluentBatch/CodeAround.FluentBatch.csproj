@@ -1,0 +1,91 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup Label="Globals">
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <Authors>CodeAround.it</Authors>
+    <Description>The library allows to create complex batch / workflow using fluent syntax. The library is .Net Standard 2.0 and included more common work task like Database source and destination, text source and destination, xml source and destination, loop work task, conditional work task, Excel source, json source. Otherwise you can implements a custom work task easly and at the end you can develop a extended module for the engin</Description>
+    <Copyright>Copyright (c) 2019-2022 Codearound.it</Copyright>
+    <PackageProjectUrl>http://www.codearound.it</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/CodearoundHub/Codearound.FluentBatch</RepositoryUrl>
+    <RepositoryType>Github</RepositoryType>
+    <PackageTags>Fluent Batch Batching WorkTask Workflow Sql Excel Json Xml Text</PackageTags>
+    <PackageReleaseNotes>Release 1.0.4
+- Fix on sql destination
+
+Release 1.0.3
+
+This Release include:
+Fix sql destination in update statement. Now it's able to update only the mapped fields. You can force update all fields call UpdateAllFields() method in sql destination task
+
+Release 1.0.2
+
+This Release include:
+- Removed unsed WithName
+- Add Name in extension task mechanism
+
+
+Release 1.0.1
+
+This Release include:
+- Add command timeout on sql source
+- Add command timeout on sql destination
+- Fix Sql Destination - Generate command
+
+Release 1.0.0
+
+This release included :
+- Engine to create a flow
+- .Net Standard 2.0 (.Net core ready)
+- Compatibility with all relational database (powered by Dapper https://www.nuget.org/packages/Dapper/)
+- Create you custom work task for each kind of custom implementation
+- Implements a Microsoft.Extension.Logging to allow choosing of common log library (NLog, Serilog etc)
+- Creating a extension of engine to included new type of work task
+	Now 1 extension is available:
+		Codearound.FluentBatch.Email (https://github.com/CodearoundHub/Codearound.FluentBatch.Email) that allow to send an email in your flow (Powered by FluentEmail https://www.nuget.org/packages/FluentEmail.Core/)
+- Set of default work task
+	- Sql Destination: Allow to persist some information in your database
+	- Text Destination: Allow to persist some information in text file included csv and fixed lenght file
+	- Xml Destination: Allow to persist some information in xml file 
+	- Loop Work Task: Allow to implement a loop behavior in your workflow
+	- Condition Wor Task: Allow to implement a condition behavior in your workflow
+	- Sql Work Task: Allow to implement a common database work task to execute db command
+	- Excel Source: Allow to grab the information from a Excel file (powered by ExcelDataReader  https://www.nuget.org/packages/ExcelDataReader)
+	- Json Source: Allow to grab the information from a Json (powered by Newtonsoft.Json https://www.nuget.org/packages/Newtonsoft.Json/)
+	- Object Source: Allow to grab the information from a .net object
+	- Sql Source: Allow to grab the information from any type of relational database (powered by Dapper https://www.nuget.org/packages/Dapper/)
+	- Text Source: Allow to grab the information from any type of Text file included csv and fixed lenght file
+	- Xml Source: Allow to grab the information from Xml</PackageReleaseNotes>
+    <PackageIcon>fluent_batch_logo_64.png</PackageIcon>
+    <PackageLicenseFile>LICENSE.md</PackageLicenseFile>
+    <Version>1.0.4</Version>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Dapper" Version="2.0.30" />
+    <PackageReference Include="ExcelDataReader" Version="3.6.0" />
+    <PackageReference Include="ExcelDataReader.DataSet" Version="3.6.0" />
+    <PackageReference Include="Microsoft.CSharp" Version="4.6.0" />
+    <PackageReference Include="Microsoft.Extensions.Logging" Version="3.0.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.2" />
+    <PackageReference Include="System.Dynamic.Runtime" Version="4.3.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\..\LICENSE.md">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+    <None Include="nuget\fluent_batch_logo_64.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,1 @@
+﻿INSERT INTO [dbo].[Persons] VALUES('25641385', 'George', 'First ',GETDATE())

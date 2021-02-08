@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<delivery xmlns:xsi="https://microsoft.com/v1/externalrevenue" 
+          xsi:schemaLocation="https://microsoft.com/v1/externalrevenue.xsd" channel_id="1" creation_date="30/04/2019" creation_time="2019-04-30T16:12:00Z"
+          sender_id="Microsoft" receiver_id="OneDrive" support_email="ftp_support@microsoft.com" support_phone="0582345111"
+          number_of_records="2"> 
+	<data>
+		<overview>
+			<number_of_transactions>2</number_of_transactions>
+			<number_of_confirmed_transactions>1</number_of_confirmed_transactions>
+			<number_of_error_transactions>1</number_of_error_transactions>
+		</overview>
+		<transactions>		
+			<transaction id="22863a1d-6bfd-4cb7-bee3-db58b05527bd" loyalty_id="3234823762" billable_points="50" confirmed="true">
+			</transaction>
+		  <transaction id="34563a1d-6bfd-4cb7-bee3-db58b0552234" loyalty_id="3346724866" billable_points="0" confirmed="false">
+		  </transaction>
+		</transactions>
+	</data> 
+</delivery>

@@ -1,0 +1,42 @@
+﻿{
+  "Cards": [
+    {
+      "IdCard": "{68BFE0B7-A62D-4EEB-990C-E426B7FEB86F}",
+      "IdCardType": "{01D78DD9-612A-4E24-978C-2C21ED26603F}",
+      "CardOwner": "George Best",
+      "CardNumber": "123456789",
+      "CardExpiryDate": "2019-08-05T10:06:36.077Z",
+      "CardBalance": 0,
+      "Currency": "EUR",
+      "IdBankAccounts": "{939C16F4-147B-40EA-8757-8E57D0FE384B}",
+      "BankAccountOwner": "George Best",
+      "BankName": "Unicredit"
+    },
+    {
+      "IdCard": "{D6D60A63-BBE7-4BED-AE83-ECBE66BA36E3}",
+      "IdCardType": "{F6C33632-48FC-4AF9-9AA3-A9B68AFFBA7F}",
+      "CardOwner": "Cris Paul",
+      "CardNumber": "78777788888",
+      "CardExpiryDate": "2019-08-05T10:06:36.077Z",
+      "CardBalance": 0,
+      "Currency": "EUR",
+      "IdBankAccounts": "{35739379-F8F8-4DBE-B9B3-EFB8FF88C894}",
+      "BankAccountOwner": "Cris Paul",
+      "BankName": "Banco di Napoli"
+    },
+    {
+      "IdCard": "{F42FD52A-A367-4E9A-96B2-EFDF74B16E61}",
+      "IdCardType": "{1348A23A-C144-473A-B4AA-3B485BE67C66}",
+      "CardOwner": "Alex Trest",
+      "CardNumber": "999999999999999",
+      "CardExpiryDate": "2019-08-05T10:06:36.077Z",
+      "CardBalance": 0,
+      "Currency": "EUR",
+      "IdBankAccounts": "{D1607A2E-BBFB-4AE2-AE46-58F4E646DEA3}",
+      "BankAccountOwner": "Alex Trest",
+      "BankName": "Poste Italiane"
+    }
+  ],
+  "Message": "string",
+  "IsCompleted": true
+}
