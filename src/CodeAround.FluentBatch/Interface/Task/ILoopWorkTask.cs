@@ -15,6 +15,8 @@ namespace CodeAround.FluentBatch.Interface.Task
 
         ILoopWorkTask<T> AddLoop(IEnumerable<T> list);
 
+        ILoopWorkTask<T> UseParallelProcess(int maxDegree);
+
         ILoopWorkTask<T> ProcessedTaskEvent(Action<object, WorkTaskEventArgs> processedTask);
 
         ILoopWorkTask<T> ProcessingTaskEvent(Action<object, WorkTaskEventArgs> processingTask);

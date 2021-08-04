@@ -73,7 +73,42 @@ namespace CodeAround.FluentBatch.Test.TaskTest
             Assert.Single(result);
         }
 
-      
+        [Fact]
+        public void create_loop_for_insert_shoult_be_return_element_parallel()
+        {
+            List<Persons> persons = new List<Persons>();
+
+            Persons person = new Persons();
+            person.PersonId = 25641385;
+            person.Name = "George";
+            person.Surname = "Best";
+            person.BirthdayDate = DateTime.Now;
+
+            persons.Add(person);
+
+
+            FlowBuilder builder = new FlowBuilder(_logger);
+            var flow = builder.Create("Task with loop")
+                .Then(task => task.Name("First Loop").CreateLoop<Persons>().AddLoop(persons).UseParallelProcess(3)
+                .Append(t => t.Create<CustomWorkTask>())
+                .Append(t => t.CreateSqlDestination()
+                              .UseConnection(_sourceDatabase.Connection)
+                               .Table("Persons")
+                                .Schema("dbo")
+                                .Map(() => "PersonId", () => "PersonId", false)
+                                .Map(() => "Name", () => "Name", false)
+                                .Map(() => "Surname", () => "Surname", false)
+                                .Map(() => "BirthdayDate", () => "BirthdayDate", false)
+                              .TruncteFirst()
+                              .Build())
+                         .Build()
+                ).Build();
+
+            flow.Run();
+            var result = _sourceDatabase.Connection.Query<int>("SELECT * FROM [dbo].[Persons]");
+            Assert.Single(result);
+        }
+
         [Fact]
         public void create_loop_return_nullArgumentException_with_parameters_null()
         {
