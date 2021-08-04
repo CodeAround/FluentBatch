@@ -16,7 +16,10 @@
     <RepositoryUrl>https://github.com/CodearoundHub/Codearound.FluentBatch</RepositoryUrl>
     <RepositoryType>Github</RepositoryType>
     <PackageTags>Fluent Batch Batching WorkTask Workflow Sql Excel Json Xml Text</PackageTags>
-    <PackageReleaseNotes>Release 1.0.4
+    <PackageReleaseNotes>Release 1.0.5
+- Add parallel support on loop task
+- Add func support to collection in loop task
+Release 1.0.4
 - Fix on sql destination
 
 Release 1.0.3
@@ -64,7 +67,7 @@ This release included :
 	- Xml Source: Allow to grab the information from Xml</PackageReleaseNotes>
     <PackageIcon>fluent_batch_logo_64.png</PackageIcon>
     <PackageLicenseFile>LICENSE.md</PackageLicenseFile>
-    <Version>1.0.4</Version>
+    <Version>1.0.5</Version>
   </PropertyGroup>
 
   <ItemGroup>

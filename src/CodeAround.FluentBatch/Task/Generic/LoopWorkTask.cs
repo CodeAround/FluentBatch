@@ -23,6 +23,8 @@ namespace CodeAround.FluentBatch.Task.Generic
         private IEnumerable<T> _parameters;
         public event EventHandler<WorkTaskEventArgs> ProcessingTask;
         public event EventHandler<WorkTaskEventArgs> ProcessedTask;
+        private Func<List<T>> _getNext;
+        Func<bool> _isEmpty;
 
         public LoopWorkTask(ILogger logger, bool useTrace)
             : base(logger, useTrace)
@@ -91,6 +93,32 @@ namespace CodeAround.FluentBatch.Task.Generic
             return this;
         }
 
+        public ILoopWorkTask<T> IsEmpty(Func<bool> isEmpty)
+        {
+            if(isEmpty == null)
+            {
+                Trace("isEmpty funct is null or empty");
+                throw new ArgumentNullException("isEmpty is null or empty");
+            }
+
+            _isEmpty = isEmpty;
+
+            return this;
+        }
+
+        public ILoopWorkTask<T> Loop<TCurrent>(Func<List<T>> getNext)
+        {
+            if (getNext == null)
+            {
+                Trace("getNext funct is null or empty");
+                throw new ArgumentNullException("getNext is null or empty");
+            }
+
+            _getNext = getNext;
+
+            return this;
+        }
+
         public override TaskResult Execute()
         {
             TaskResult result = null;
@@ -101,26 +129,52 @@ namespace CodeAround.FluentBatch.Task.Generic
                 Trace("Tasks", _task);
                 Trace("Parameters", _parameters);
 
-                if (_task.Count > 0 && _parameters.Count() > 0)
+                if (_task.Count > 0)
                 {
-                    if (!_userParallel)
+                    if (_parameters.Count() > 0)
                     {
-                        foreach (var item in _parameters)
+                        if (!_userParallel)
                         {
-                            ExecuteBody(item);
+                            foreach (var item in _parameters)
+                            {
+                                ExecuteBody(item);
+                            }
+                        }
+                        else
+                        {
+                            Parallel.ForEach(_parameters, new ParallelOptions()
+                            {
+                                MaxDegreeOfParallelism = _maxDegree
+                            }, (item) =>
+                            {
+                                ExecuteBody(item);
+                            });
                         }
                     }
-                    else
+                    else if(_isEmpty != null && !_isEmpty() && _getNext != null)
                     {
-                        Parallel.ForEach(_parameters, new ParallelOptions() 
+                        if (!_userParallel)
                         {
-                            MaxDegreeOfParallelism = _maxDegree
-                        }, (item) =>
+                            T prevItem = default(T);
+                            foreach (var item in _getNext())
+                            {
+                                prevItem = item;
+                                ExecuteBody(item);
+                            }
+                        }
+                        else
                         {
-                            ExecuteBody(item);
-                        });
+                            Parallel.ForEach(_getNext(), new ParallelOptions()
+                            {
+                                MaxDegreeOfParallelism = _maxDegree
+                            }, (item) =>
+                            {
+                                ExecuteBody(item);
+                            });
+                        }
                     }
                 }
+
                 result = new TaskResult(true, null);
                 Trace("End Execute Loop task");
             }

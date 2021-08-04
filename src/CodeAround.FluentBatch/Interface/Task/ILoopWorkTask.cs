@@ -20,5 +20,9 @@ namespace CodeAround.FluentBatch.Interface.Task
         ILoopWorkTask<T> ProcessedTaskEvent(Action<object, WorkTaskEventArgs> processedTask);
 
         ILoopWorkTask<T> ProcessingTaskEvent(Action<object, WorkTaskEventArgs> processingTask);
+
+        ILoopWorkTask<T> IsEmpty(Func<bool> isEmpty);
+
+        ILoopWorkTask<T> Loop<TCurrent>(Func<List<T>> getNext);
     }
 }
