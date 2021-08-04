@@ -106,7 +106,7 @@ namespace CodeAround.FluentBatch.Task.Generic
             return this;
         }
 
-        public ILoopWorkTask<T> Loop<TCurrent>(Func<List<T>> getNext)
+        public ILoopWorkTask<T> Loop(Func<List<T>> getNext)
         {
             if (getNext == null)
             {

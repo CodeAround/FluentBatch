@@ -23,6 +23,6 @@ namespace CodeAround.FluentBatch.Interface.Task
 
         ILoopWorkTask<T> IsEmpty(Func<bool> isEmpty);
 
-        ILoopWorkTask<T> Loop<TCurrent>(Func<List<T>> getNext);
+        ILoopWorkTask<T> Loop(Func<List<T>> getNext);
     }
 }
