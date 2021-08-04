@@ -1,6 +1,6 @@
 # Codearound.FluentBatch
 
-[![NuGet](https://img.shields.io/badge/nuget-v1.0.3-blue)](https://www.nuget.org/packages/CodeAround.FluentBatch/) ![Code Coverage](https://img.shields.io/badge/Code%20Coverage-92%25-green) ![Supported Platform](https://img.shields.io/badge/Supported%20Platform-.net%20Standard%202.0-yellow) ![Test Number](https://img.shields.io/badge/Test%20Number-%23109-red)
+[![NuGet](https://img.shields.io/badge/nuget-v1.0.5-blue)](https://www.nuget.org/packages/CodeAround.FluentBatch/) ![Code Coverage](https://img.shields.io/badge/Code%20Coverage-92%25-green) ![Supported Platform](https://img.shields.io/badge/Supported%20Platform-.net%20Standard%202.0-yellow) ![Test Number](https://img.shields.io/badge/Test%20Number-%23109-red)
 
 The library allows to create complex batch / workflow using fluent syntax. The library is .Net Standard 2.0 and included more common work tasks like Database source and destination, text source and destination, xml source and destination, loop work task, conditional work task, Excel source, json source. 
 
