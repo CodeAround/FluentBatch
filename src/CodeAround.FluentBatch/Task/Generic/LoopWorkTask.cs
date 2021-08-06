@@ -124,14 +124,15 @@ namespace CodeAround.FluentBatch.Task.Generic
             TaskResult result = null;
             try
             {
-                Trace(String.Format("Start Execute Loop task. Task count {0} and Parameter {1} ", _task.Count, _parameters.Count()));
+                var count = _parameters == null ? 0 : _parameters.Count();
+                Trace(String.Format("Start Execute Loop task. Task count {0} and Parameter {1} ", _task.Count, count));
               
                 Trace("Tasks", _task);
                 Trace("Parameters", _parameters);
 
                 if (_task.Count > 0)
                 {
-                    if (_parameters.Count() > 0)
+                    if (_parameters != null && _parameters.Count() > 0)
                     {
                         if (!_userParallel)
                         {
