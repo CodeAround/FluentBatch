@@ -25,6 +25,10 @@ namespace CodeAround.FluentBatch.Task.Generic
 
         public Dictionary<string, object> PreviousTaskResult { get; set; }
 
+        public Dictionary<string, object> ParentPreviousTaskResult { get; set; }
+
+        public TaskResult ParentTaskResult { get; private set; }
+
         public WorkTask(ILogger logger, bool useTrace)
             : base(logger, useTrace)
         {
@@ -35,6 +39,15 @@ namespace CodeAround.FluentBatch.Task.Generic
         public virtual void Initialize(TaskResult taskResult)
         {
             TaskResult = taskResult;
+        }
+
+        public void InitParentResult(IWorkTask workTask)
+        {
+            if(workTask != null && workTask.PreviousTaskResult != null)
+            {
+                ParentPreviousTaskResult = workTask.PreviousTaskResult;
+                ParentTaskResult = workTask.TaskResult;
+            }
         }
 
         public void InitPreviousResult(string taskName, Dictionary<string, object> previousResult)

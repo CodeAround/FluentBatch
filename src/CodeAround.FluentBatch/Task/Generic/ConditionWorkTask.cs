@@ -152,6 +152,7 @@ namespace CodeAround.FluentBatch.Task.Generic
                             OnProcessingTask(workTask, taskResult);
 
                             workTask.InitPreviousResult(previousTaskName, previousTaskResult);
+                            workTask.InitParentResult(this);
                             workTask.Initialize(taskResult);
                             previousTaskName = workTask.GetType().FullName;
                             previousTaskResult = workTask.PreviousTaskResult;
@@ -184,6 +185,7 @@ namespace CodeAround.FluentBatch.Task.Generic
                             OnProcessingTask(workTask, taskResult);
 
                             workTask.InitPreviousResult(previousTaskName, previousTaskResult);
+                            workTask.InitParentResult(this);
                             workTask.Initialize(taskResult);
                             previousTaskName = workTask.GetType().FullName;
                             previousTaskResult = workTask.PreviousTaskResult;

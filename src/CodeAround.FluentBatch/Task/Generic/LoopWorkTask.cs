@@ -205,6 +205,7 @@ namespace CodeAround.FluentBatch.Task.Generic
                     OnProcessingTask(workTask, taskResult);
 
                     workTask.InitPreviousResult(previousTaskName, previousTaskResult);
+                    workTask.InitParentResult(this);
                     taskResult = taskResult == null ? new TaskResult(true, null) : taskResult;
                     workTask.Initialize(new LoopTaskResult(taskResult, item));
                     previousTaskName = workTask.GetType().FullName;
