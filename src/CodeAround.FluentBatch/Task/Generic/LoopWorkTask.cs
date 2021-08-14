@@ -19,7 +19,7 @@ namespace CodeAround.FluentBatch.Task.Generic
     {
         private bool _userParallel;
         private int _maxDegree;
-        private List<IWorkTask> _task;
+        private List<Func<ITaskBuilder, IWorkTask>> _task;
         private IEnumerable<T> _parameters;
         public event EventHandler<WorkTaskEventArgs> ProcessingTask;
         public event EventHandler<WorkTaskEventArgs> ProcessedTask;
@@ -30,26 +30,24 @@ namespace CodeAround.FluentBatch.Task.Generic
             : base(logger, useTrace)
 
         {
-            _task = new List<IWorkTask>();
+            _task = new List<Func<ITaskBuilder, IWorkTask>>();
         }
 
         public ILoopWorkTask<T> Append(Func<ITaskBuilder, IWorkTask> taskFunc, int position = -1)
         {
             var builder = new WorkTaskBuilder(Logger, UseTrace);
-            var task = taskFunc(builder);
 
-            Trace(String.Format($"Task is null : {task is null}"));
-            if (task != null)
+            if (taskFunc != null)
             {
                 if (position < 0)
-                    _task.Add(task);
+                    _task.Add(taskFunc);
                 else if (position > _task.Count)
                 {
                     Trace(String.Format("Invalid index exception. The {0} index must be less or equal to number of elements (collection count {1})", position, _task.Count));
                     throw new InvalidOperationException(String.Format("Invalid index exception. The {0} index must be less or equal to number of elements (collection count {1})", position, _task.Count));
                 }
                 else
-                    _task.Insert(position, task);
+                    _task.Insert(position, taskFunc);
             }
 
             return this;
@@ -195,8 +193,11 @@ namespace CodeAround.FluentBatch.Task.Generic
             Dictionary<string, object> previousTaskResult = null;
             string previousTaskName = null;
 
-            foreach (var workTask in _task)
+            foreach (var workTaskFunc in _task)
             {
+                var builder = new WorkTaskBuilder(Logger, UseTrace);
+                var workTask = workTaskFunc(builder);
+
                 Trace("Current WorkTask", workTask);
                 Trace("Parameter", item);
 
