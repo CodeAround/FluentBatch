@@ -16,7 +16,9 @@
     <RepositoryUrl>https://github.com/CodearoundHub/Codearound.FluentBatch</RepositoryUrl>
     <RepositoryType>Github</RepositoryType>
     <PackageTags>Fluent Batch Batching WorkTask Workflow Sql Excel Json Xml Text</PackageTags>
-    <PackageReleaseNotes>Release 1.0.9
+    <PackageReleaseNotes>Release 1.0.10
+ - Fix Loop Task on parallel
+Release 1.0.9
 - Add execute async and callback in customworktask
 - Fix issue on loop task
 Release 1.0.7
@@ -72,7 +74,7 @@ This release included :
 	- Xml Source: Allow to grab the information from Xml</PackageReleaseNotes>
     <PackageIcon>fluent_batch_logo_64.png</PackageIcon>
     <PackageLicenseFile>LICENSE.md</PackageLicenseFile>
-    <Version>1.0.9</Version>
+    <Version>1.0.10</Version>
   </PropertyGroup>
 
   <ItemGroup>
