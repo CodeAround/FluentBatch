@@ -50,6 +50,8 @@ namespace CodeAround.FluentBatch.Engine
             }
         }
 
+        public int TaskCount => _task.Count;
+
         public void Run()
         {
             try

@@ -8,6 +8,7 @@ namespace CodeAround.FluentBatch.Interface
 {
     public interface IFlowContext
     {
+        int TaskCount { get; }
         void Run();
     }
 }
